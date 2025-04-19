@@ -3,22 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Pré-carrega CSS para eliminar delay -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="style">
     <title>Blue Antioxidant Secret (2025) - Erase Wrinkles & Dark Spots in 21 Days | Dermatologist-Approved</title>
     <meta name="description" content="Top Dermatologists Reveal: This 2025 Blue Antioxidant Formula Erases 87% of Wrinkles, Banishes Dark Spots & Lifts Sagging Skin in Just 3 Weeks - No Creams or Injections Needed">
-    <meta name="keywords" content="anti-aging, wrinkles, dark spots, skincare 2025, blue antioxidant, natural skincare, dermatologist secret">
-    <link rel="canonical" href="https://michelalmeida0.github.io/TheBlueSkinSecrets/">
-    <script defer src="https://cdn.tailwindcss.com"></script>
     <style>
-        @keyframes glow {
-            0% { text-shadow: 0 0 10px #00f7ff; }
-            50% { text-shadow: 0 0 20px #0066ff; }
-            100% { text-shadow: 0 0 10px #00f7ff; }
+        /* CSS crítico inline para carregamento imediato */
+        body { 
+            background: #000; 
+            color: #fff; 
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            overflow-x: hidden;
         }
-        .neon-text { animation: glow 2s infinite; }
-        .countdown { font-family: 'Courier New', monospace; }
+        .neon-text {
+            text-shadow: 0 0 10px #00f7ff, 0 0 20px #0066ff;
+            animation: glow 2s ease-in-out infinite;
+        }
+        @keyframes glow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        .countdown {
+            font-family: 'Courier New', monospace;
+            font-size: 5rem;
+            background: linear-gradient(45deg, #00f7ff, #0066ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
     </style>
+    <!-- Tailwind carregado assincronamente -->
+    <script defer src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-black text-white font-sans overflow-x-hidden">
+<body>
 
 <!-- Hero Section -->
 <section class="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-black flex items-center">
@@ -111,7 +128,7 @@
     </div>
 </section>
 
-<!-- Final CTA -->
+<!-- Seção Final CTA Corrigida -->
 <section class="bg-gradient-to-br from-blue-900 to-black py-20">
     <div class="container mx-auto px-4 text-center">
         <h2 class="text-3xl md:text-4xl font-bold mb-8 neon-text">Your 2025 Skin Starts NOW</h2>
@@ -119,69 +136,101 @@
             Enter your email below to unlock immediate access to the video revealing the exact protocol used by 9,327+ women:
         </p>
         
-        <!-- Formulário Duplicado -->
+        <!-- Formulário Corrigido com Validação -->
         <form id="leadForm2" class="max-w-md mx-auto bg-gray-900/50 p-8 rounded-2xl shadow-2xl space-y-6">
-            <!-- ... (mesmo conteúdo do primeiro formulário) ... -->
+            <input name="nome" type="text" required 
+                   class="w-full px-5 py-4 bg-gray-800 rounded-lg border border-cyan-500/30 focus:ring-4 focus:ring-cyan-300/20 text-white placeholder-gray-400"
+                   placeholder="First Name">
+            
+            <input name="email" type="email" required
+                   class="w-full px-5 py-4 bg-gray-800 rounded-lg border border-cyan-500/30 focus:ring-4 focus:ring-cyan-300/20 text-white placeholder-gray-400"
+                   placeholder="Your Best Email"
+                   oninvalid="this.setCustomValidity('⚠️ Valid email required for video access!')"
+                   oninput="this.setCustomValidity('')">
+
+            <button type="submit" 
+                    class="w-full py-4 px-8 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105">
+                👉 Watch the Secret Video Now
+            </button>
         </form>
     </div>
 </section>
 
-<!-- Thank You Page (Hidden Initially) -->
+<!-- Thank You Page Ajustada -->
 <div id="thankYouPage" class="fixed inset-0 bg-black z-50 hidden items-center justify-center">
-    <div class="text-center">
-        <h2 class="text-4xl md:text-6xl font-bold mb-8 text-cyan-400 neon-text">Access Granted! 🎉</h2>
-        <p class="text-xl md:text-2xl mb-6">Processing your request...</p>
-        <div class="countdown text-6xl text-cyan-400 mb-8">5</div>
-        <p class="text-gray-400">Do not close this window. Redirecting to exclusive content...</p>
+    <div class="text-center p-4">
+        <h2 class="text-4xl md:text-6xl font-bold mb-8 neon-text">Access Granted! 🎉</h2>
+        <p class="text-xl md:text-2xl mb-6 text-cyan-300">Processing your request...</p>
+        <div class="countdown mb-8">5</div>
+        <p class="text-gray-400 animate-pulse">Redirecting to exclusive content in:</p>
     </div>
 </div>
 
-<!-- Footer -->
-<footer class="py-8 bg-gray-900 text-center">
-    <p class="text-gray-400">© 2025 Michelle Almeida. All rights reserved.</p>
-</footer>
-
 <script>
+    // Script Otimizado
     const scriptURL = 'https://script.google.com/macros/s/AKfycbxwIzLXG8wo5rBJBZL3JKXazptzFF_hEgZsKzMop4q8tMeXq3-swLWBwrtt6cTxpVOq/exec';
-    
-    // Função para mostrar contagem regressiva
+    let countdownActive = false;
+
     function startCountdown() {
+        if(countdownActive) return;
+        countdownActive = true;
+        
         let seconds = 5;
         const countdownElement = document.querySelector('.countdown');
         
         const interval = setInterval(() => {
-            seconds--;
             countdownElement.textContent = seconds;
-            if(seconds <= 0) {
+            seconds--;
+            
+            if(seconds < 0) {
                 clearInterval(interval);
-                window.location.href = 'https://primebiome24.com/video.php?aff=michelalmeida00';
+                countdownElement.textContent = "0";
+                setTimeout(() => {
+                    window.location.href = 'https://primebiome24.com/video.php?aff=michelalmeida00';
+                }, 2000); // +2s extra
             }
         }, 1000);
     }
 
-    // Envio do formulário
-    ['leadForm', 'leadForm2'].forEach(formId => {
-        document.getElementById(formId).addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            try {
-                // Mostrar página de agradecimento
-                document.getElementById('thankYouPage').classList.remove('hidden');
-                
-                // Enviar dados para Google Sheets
-                await fetch(scriptURL, {
-                    method: 'POST',
-                    body: new FormData(e.target)
-                });
-                
-                // Iniciar contagem regressiva
-                startCountdown();
-                
-            } catch (error) {
-                console.error('Error:', error);
-                window.location.href = 'https://primebiome24.com/video.php?aff=michelalmeida00';
+    async function handleSubmit(e) {
+        e.preventDefault();
+        const form = e.target;
+        
+        try {
+            // Validação de E-mail
+            const email = form.querySelector('[name="email"]').value;
+            if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+                alert('⚠️ Please enter a valid email address!');
+                return;
             }
-        });
+
+            // Mostrar página de agradecimento
+            document.getElementById('thankYouPage').classList.remove('hidden');
+            
+            // Enviar dados
+            const formData = new FormData(form);
+            await fetch(scriptURL, {
+                method: 'POST',
+                body: formData
+            });
+            
+            startCountdown();
+            
+        } catch (error) {
+            console.error('Error:', error);
+            window.location.href = 'https://primebiome24.com/video.php?aff=michelalmeida00';
+        }
+    }
+
+    // Event Listeners Otimizados
+    ['leadForm', 'leadForm2'].forEach(id => {
+        document.getElementById(id).addEventListener('submit', handleSubmit);
+    });
+
+    // Carregamento Prioritário
+    window.addEventListener('DOMContentLoaded', () => {
+        document.body.style.visibility = 'visible';
+        document.body.style.opacity = '1';
     });
 </script>
 
