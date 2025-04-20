@@ -3,20 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Pré-carrega CSS para eliminar delay -->
+    <!-- Pré-carrega o Tailwind CSS para acelerar o carregamento -->
     <link rel="preload" href="https://cdn.tailwindcss.com" as="style">
     <title>Blue Antioxidant Secret (2025) - Erase Wrinkles & Dark Spots in 21 Days | Dermatologist-Approved</title>
     <meta name="description" content="Top Dermatologists Reveal: This 2025 Blue Antioxidant Formula Erases 87% of Wrinkles, Banishes Dark Spots & Lifts Sagging Skin in Just 3 Weeks - No Creams or Injections Needed">
     <style>
         /* CSS crítico inline para carregamento imediato */
-        body { 
-            background: #000; 
-            color: #fff; 
+        body {
+            background: #000;
+            color: #fff;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             overflow-x: hidden;
-            opacity: 0;
-            transition: opacity 0.5s ease-in;
+            margin: 0;
+            padding: 0;
         }
+        /* Tela de carregamento */
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .loader-text {
+            font-size: 1.5rem;
+            color: #00f7ff;
+            text-shadow: 0 0 10px #00f7ff;
+            margin-bottom: 1rem;
+            text-align: center;
+            padding: 0 1rem;
+        }
+        .loader-bar {
+            width: 300px;
+            height: 4px;
+            background: #333;
+            border-radius: 2px;
+            overflow: hidden;
+            position: relative;
+        }
+        .loader-progress {
+            width: 0;
+            height: 100%;
+            background: linear-gradient(to right, #00f7ff, #0066ff);
+            animation: progress 2s linear infinite;
+        }
+        @keyframes progress {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+        /* Estilos neon */
         .neon-text {
             text-shadow: 0 0 10px #00f7ff, 0 0 20px #0066ff, 0 0 30px #0033ff;
             animation: glow 1.5s ease-in-out infinite;
@@ -25,6 +66,7 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0.7; }
         }
+        /* Contagem regressiva */
         .countdown {
             font-family: 'Courier New', monospace;
             font-size: 6rem;
@@ -34,193 +76,180 @@
             color: transparent;
             text-shadow: 0 0 15px #00f7ff;
         }
-        .fade-in {
-            animation: fadeIn 0.8s ease-in forwards;
-        }
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-        /* Efeito de partículas no fundo */
-        #particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-            background: radial-gradient(circle, rgba(0, 247, 255, 0.1) 0%, rgba(0, 0, 0, 1) 70%);
-        }
-        .progress-bar {
-            width: 0%;
-            height: 4px;
-            background: linear-gradient(to right, #00f7ff, #0066ff);
-            animation: progress 5s linear forwards;
-        }
-        @keyframes progress {
-            to { width: 100%; }
-        }
-        /* Estilos do footer */
-        .footer {
-            text-align: center;
-            padding: 1rem;
-            background: #000;
+        /* Footer aprimorado */
+        footer {
+            padding: 2rem;
+            background: linear-gradient(180deg, #000, #001133);
             color: #fff;
-            font-size: 1rem;
+            text-align: center;
+            font-size: 1.2rem;
+            text-shadow: 0 0 5px #00f7ff, 0 0 10px #0066ff;
+            border-top: 2px solid #00f7ff;
             margin-top: 2rem;
-            border-top: 1px solid #00f7ff;
-            text-shadow: 0 0 5px #00f7ff;
         }
     </style>
     <!-- Tailwind carregado assincronamente -->
     <script defer src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="fade-in">
-    <!-- Fundo de partículas -->
-    <div id="particles"></div>
-
-    <!-- Hero Section -->
-    <section class="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-black flex items-center relative">
-        <div class="container mx-auto px-4 py-20 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 neon-text">
-                <span class="block mb-4">2025 Skin Revolution:</span>
-                <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-600">Erase 10 Years in 21 Days</span>
-            </h1>
-            <p class="text-xl md:text-2xl mb-8 text-gray-300 max-w-2xl mx-auto">
-                Discover why <span class="font-bold text-cyan-400">9,327+ women</span> are ditching expensive creams after unlocking this NASA-inspired <span class="font-bold text-cyan-400">blue antioxidant</span> that boosts collagen <span class="font-bold">387% faster</span> than retinol. Enter your email now:
-            </p>
-
-            <form id="leadForm" class="max-w-md mx-auto bg-gray-900/70 p-8 rounded-2xl shadow-2xl space-y-6 border border-cyan-500/20">
-                <input name="nome" type="text" required 
-                       class="w-full px-5 py-4 bg-gray-800 rounded-lg border border-cyan-500/30 focus:ring-4 focus:ring-cyan-300/20 text-white placeholder-gray-400 transition-all duration-300"
-                       placeholder="First Name">
-                
-                <input name="email" type="email" required
-                       class="w-full px-5 py-4 bg-gray-800 rounded-lg border border-cyan-500/30 focus:ring-4 focus:ring-cyan-300/20 text-white placeholder-gray-400 transition-all duration-300"
-                       placeholder="Your Best Email"
-                       oninvalid="this.setCustomValidity('⚠️ Please enter a valid email to access the video')"
-                       oninput="this.setCustomValidity('')">
-
-                <button type="submit" 
-                        class="w-full py-4 px-8 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-                    👉 Get Instant Access Now
-                </button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="py-20 bg-gradient-to-b from-black to-blue-900/20">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 neon-text">Real Women, Stunning Results</h2>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="flex flex-col items-center bg-gray-900/70 p-6 rounded-xl shadow-lg border border-cyan-500/10 hover:scale-105 transition-transform duration-300">
-                    <img src="https://i.postimg.cc/3xvgh7WG/359b454539961cb1f212aeb4d3bdc391.jpg" 
-                         alt="Emily transformation" 
-                         class="w-32 h-32 rounded-full object-cover border-4 border-cyan-500/50 mb-4">
-                    <p class="italic text-gray-300 mb-4">"At 42, I look better than at 30! Dark spots gone in WEEK 1!"</p>
-                    <p class="text-cyan-400 font-bold">Emily, 42 • Texas</p>
-                </div>
-
-                <div class="flex flex-col items-center bg-gray-900/70 p-6 rounded-xl shadow-lg border border-cyan-500/10 hover:scale-105 transition-transform duration-300">
-                    <img src="https://i.postimg.cc/kgKtZchF/a9ca9739642a5e6a336790a31cd71905.jpg" 
-                         alt="Sarah transformation" 
-                         class="w-32 h-32 rounded-full object-cover border-4 border-cyan-500/50 mb-4">
-                    <p class="italic text-gray-300 mb-4">"My husband says I look 25 again! Sagging skin lifted in 21 days!"</p>
-                    <p class="text-cyan-400 font-bold">Sarah, 38 • Florida</p>
-                </div>
-
-                <div class="flex flex-col items-center bg-gray-900/70 p-6 rounded-xl shadow-lg border border-cyan-500/10 hover:scale-105 transition-transform duration-300">
-                    <img src="https://i.postimg.cc/tgfJ4nfC/c10e29cbd7b57323b692949a5f1aafa5.jpg" 
-                         alt="Linda transformation" 
-                         class="w-32 h-32 rounded-full object-cover border-4 border-cyan-500/50 mb-4">
-                    <p class="italic text-gray-300 mb-4">"Acne scars vanished! My skin glows like never before!"</p>
-                    <p class="text-cyan-400 font-bold">Linda, 45 • California</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits -->
-    <section class="py-20 bg-black">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 neon-text">Your Skin’s Missing Secret?</h2>
-            
-            <div class="max-w-3xl mx-auto space-y-8">
-                <div class="flex items-start space-x-4">
-                    <div class="text-cyan-400 text-2xl">✓</div>
-                    <div>
-                        <h3 class="text-xl font-bold mb-2">Tired of creams that don’t work?</h3>
-                        <p class="text-gray-400">(This targets cells directly - backed by 23 studies)</p>
-                    </div>
-                </div>
-                <div class="flex items-start space-x-4">
-                    <div class="text-cyan-400 text-2xl">✓</div>
-                    <div>
-                        <h3 class="text-xl font-bold mb-2">Want visible results fast?</h3>
-                        <p class="text-gray-400">(87% wrinkle reduction in just 21 days)</p>
-                    </div>
-                </div>
-                <div class="text-center mt-12">
-                    <p class="text-2xl font-bold text-cyan-400 animate-pulse">
-                        🔒 Only 847 Spots Left - Public Release in 2025
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section class="bg-gradient-to-br from-blue-900 to-black py-20">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-8 neon-text">Your 2025 Skin Transformation Starts NOW</h2>
-            <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-                Enter your email to unlock the video revealing the protocol used by <span class="font-bold text-cyan-400">9,327+ women</span>:
-            </p>
-            
-            <form id="leadForm2" class="max-w-md mx-auto bg-gray-900/70 p-8 rounded-2xl shadow-2xl space-y-6 border border-cyan-500/20">
-                <input name="nome" type="text" required 
-                       class="w-full px-5 py-4 bg-gray-800 rounded-lg border border-cyan-500/30 focus:ring-4 focus:ring-cyan-300/20 text-white placeholder-gray-400 transition-all duration-300"
-                       placeholder="First Name">
-                
-                <input name="email" type="email" required
-                       class="w-full px-5 py-4 bg-gray-800 rounded-lg border border-cyan-500/30 focus:ring-4 focus:ring-cyan-300/20 text-white placeholder-gray-400 transition-all duration-300"
-                       placeholder="Your Best Email"
-                       oninvalid="this.setCustomValidity('⚠️ Valid email required for video access!')"
-                       oninput="this.setCustomValidity('')">
-
-                <button type="submit" 
-                        class="w-full py-4 px-8 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-                    👉 Watch the Secret Video Now
-                </button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Thank You Page -->
-    <div id="thankYouPage" class="fixed inset-0 bg-black z-50 hidden flex items-center justify-center">
-        <div class="text-center p-4">
-            <h2 class="text-4xl md:text-6xl font-bold mb-8 neon-text">Access Granted! 🎉</h2>
-            <p class="text-xl md:text-2xl mb-6 text-cyan-300">Seu acesso exclusivo está sendo preparado...</p>
-            <div class="countdown mb-4">5</div>
-            <div class="w-64 mx-auto bg-gray-800 rounded-full overflow-hidden">
-                <div class="progress-bar"></div>
-            </div>
-            <p class="text-gray-400 mt-4 animate-pulse">Redirecting in:</p>
-            <footer class="footer mt-8">
-                <p>@2025 Michelle Almeida. All copyright Reserved</p>
-            </footer>
+<body>
+    <!-- Tela de carregamento -->
+    <div id="loader">
+        <p class="loader-text">Processing your 2025 Skin Renewal Protocol... <br>Stay tuned – 9,327+ women already transformed!</p>
+        <div class="loader-bar">
+            <div class="loader-progress"></div>
         </div>
     </div>
 
-    <!-- Footer na página inicial -->
-    <footer class="footer">
-        <p>@2025 Michelle Almeida. All copyright Reserved</p>
-    </footer>
+    <!-- Conteúdo principal (inicialmente oculto) -->
+    <div id="content" style="display: none;">
+        <!-- Hero Section -->
+        <section class="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-black flex items-center relative">
+            <div class="container mx-auto px-4 py-20 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 neon-text">
+                    <span class="block mb-4">2025 Skin Revolution:</span>
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-600">Erase 10 Years in 21 Days</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-300 max-w-2xl mx-auto">
+                    Discover why <span class="font-bold text-cyan-400">9,327+ women</span> are ditching expensive creams after unlocking this NASA-inspired <span class="font-bold text-cyan-400">blue antioxidant</span> that boosts collagen <span class="font-bold">387% faster</span> than retinol. Enter your email now:
+                </p>
+
+                <form id="leadForm" class="max-w-md mx-auto bg-gray-900/70 p-8 rounded-2xl shadow-2xl space-y-6 border border-cyan-500/20">
+                    <input name="nome" type="text" required 
+                           class="w-full px-5 py-4 bg-gray-800 rounded-lg border border-cyan-500/30 focus:ring-4 focus:ring-cyan-300/20 text-white placeholder-gray-400 transition-all duration-300"
+                           placeholder="First Name">
+                    
+                    <input name="email" type="email" required
+                           class="w-full px-5 py-4 bg-gray-800 rounded-lg border border-cyan-500/30 focus:ring-4 focus:ring-cyan-300/20 text-white placeholder-gray-400 transition-all duration-300"
+                           placeholder="Your Best Email"
+                           oninvalid="this.setCustomValidity('⚠️ Please enter a valid email to access the video')"
+                           oninput="this.setCustomValidity('')">
+
+                    <button type="submit" 
+                            class="w-full py-4 px-8 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        👉 Get Instant Access Now
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-20 bg-gradient-to-b from-black to-blue-900/20">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 neon-text">Real Women, Stunning Results</h2>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="flex flex-col items-center bg-gray-900/70 p-6 rounded-xl shadow-lg border border-cyan-500/10 hover:scale-105 transition-transform duration-300">
+                        <img src="https://i.postimg.cc/3xvgh7WG/359b454539961cb1f212aeb4d3bdc391.jpg" 
+                             alt="Emily transformation" 
+                             class="w-32 h-32 rounded-full object-cover border-4 border-cyan-500/50 mb-4" loading="lazy">
+                        <p class="italic text-gray-300 mb-4">"At 42, I look better than at 30! Dark spots gone in WEEK 1!"</p>
+                        <p class="text-cyan-400 font-bold">Emily, 42 • Texas</p>
+                    </div>
+
+                    <div class="flex flex-col items-center bg-gray-900/70 p-6 rounded-xl shadow-lg border border-cyan-500/10 hover:scale-105 transition-transform duration-300">
+                        <img src="https://i.postimg.cc/kgKtZchF/a9ca9739642a5e6a336790a31cd71905.jpg" 
+                             alt="Sarah transformation" 
+                             class="w-32 h-32 rounded-full object-cover border-4 border-cyan-500/50 mb-4" loading="lazy">
+                        <p class="italic text-gray-300 mb-4">"My husband says I look 25 again! Sagging skin lifted in 21 days!"</p>
+                        <p class="text-cyan-400 font-bold">Sarah, 38 • Florida</p>
+                    </div>
+
+                    <div class="flex flex-col items-center bg-gray-900/70 p-6 rounded-xl shadow-lg border border-cyan-500/10 hover:scale-105 transition-transform duration-300">
+                        <img src="https://i.postimg.cc/tgfJ4nfC/c10e29cbd7b57323b692949a5f1aafa5.jpg" 
+                             alt="Linda transformation" 
+                             class="w-32 h-32 rounded-full object-cover border-4 border-cyan-500/50 mb-4" loading="lazy">
+                        <p class="italic text-gray-300 mb-4">"Acne scars vanished! My skin glows like never before!"</p>
+                        <p class="text-cyan-400 font-bold">Linda, 45 • California</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits -->
+        <section class="py-20 bg-black">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 neon-text">Your Skin’s Missing Secret?</h2>
+                
+                <div class="max-w-3xl mx-auto space-y-8">
+                    <div class="flex items-start space-x-4">
+                        <div class="text-cyan-400 text-2xl">✓</div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Tired of creams that don’t work?</h3>
+                            <p class="text-gray-400">(This targets cells directly - backed by 23 studies)</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="text-cyan-400 text-2xl">✓</div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Want visible results fast?</h3>
+                            <p class="text-gray-400">(87% wrinkle reduction in just 21 days)</p>
+                        </div>
+                    </div>
+                    <div class="text-center mt-12">
+                        <p class="text-2xl font-bold text-cyan-400 animate-pulse">
+                            🔒 Only 847 Spots Left - Public Release in 2025
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="bg-gradient-to-br from-blue-900 to-black py-20">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 neon-text">Your 2025 Skin Transformation Starts NOW</h2>
+                <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+                    Enter your email to unlock the video revealing the protocol used by <span class="font-bold text-cyan-400">9,327+ women</span>:
+                </p>
+                
+                <form id="leadForm2" class="max-w-md mx-auto bg-gray-900/70 p-8 rounded-2xl shadow-2xl space-y-6 border border-cyan-500/20">
+                    <input name="nome" type="text" required 
+                           class="w-full px-5 py-4 bg-gray-800 rounded-lg border border-cyan-500/30 focus:ring-4 focus:ring-cyan-300/20 text-white placeholder-gray-400 transition-all duration-300"
+                           placeholder="First Name">
+                    
+                    <input name="email" type="email" required
+                           class="w-full px-5 py-4 bg-gray-800 rounded-lg border border-cyan-500/30 focus:ring-4 focus:ring-cyan-300/20 text-white placeholder-gray-400 transition-all duration-300"
+                           placeholder="Your Best Email"
+                           oninvalid="this.setCustomValidity('⚠️ Valid email required for video access!')"
+                           oninput="this.setCustomValidity('')">
+
+                    <button type="submit" 
+                            class="w-full py-4 px-8 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        👉 Watch the Secret Video Now
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Thank You Page -->
+        <div id="thankYouPage" class="fixed inset-0 bg-black z-50 hidden flex items-center justify-center">
+            <div class="text-center p-4">
+                <h2 class="text-4xl md:text-6xl font-bold mb-8 neon-text">Access Granted! 🎉</h2>
+                <p class="text-xl md:text-2xl mb-6 text-cyan-300">Seu acesso exclusivo está sendo preparado...</p>
+                <div class="countdown mb-4">5</div>
+                <div class="w-64 mx-auto bg-gray-800 rounded-full overflow-hidden">
+                    <div class="progress-bar"></div>
+                </div>
+                <p class="text-gray-400 mt-4 animate-pulse">Redirecting in:</p>
+            </div>
+        </div>
+
+        <!-- Footer aprimorado -->
+        <footer>
+            <p>© 2025 Michelle Almeida. All rights reserved.</p>
+        </footer>
+    </div>
 
     <script>
-        // Script Otimizado
+        // Controla a tela de carregamento
+        window.onload = function() {
+            const loader = document.getElementById('loader');
+            const content = document.getElementById('content');
+            loader.style.display = 'none';
+            content.style.display = 'block';
+        };
+
+        // Script otimizado para formulários
         const scriptURL = 'https://script.google.com/macros/s/AKfycby7nnWiHQ6GtHsm_xbzIdzJkWRbRV3gqU1aY-QABFlN6N6A3RY-pNGC8spypgyq5tdU/exec';
         let countdownActive = false;
 
@@ -254,12 +283,12 @@
                     return;
                 }
 
-                // Mostrar página de agradecimento
+                // Mostra a página de agradecimento
                 const thankYouPage = document.getElementById('thankYouPage');
                 thankYouPage.classList.remove('hidden');
                 thankYouPage.classList.add('flex');
                 
-                // Enviar dados ao Google Sheets
+                // Envia os dados ao Google Sheets
                 const formData = new FormData(form);
                 const response = await fetch(scriptURL, { method: 'POST', body: formData });
                 if (!response.ok) throw new Error('Falha ao enviar dados para o Google Sheets');
@@ -272,14 +301,9 @@
             }
         }
 
-        // Event Listeners
+        // Event Listeners para os formulários
         ['leadForm', 'leadForm2'].forEach(id => {
             document.getElementById(id).addEventListener('submit', handleSubmit);
-        });
-
-        // Garantir carregamento suave
-        window.addEventListener('DOMContentLoaded', () => {
-            document.body.style.opacity = '1';
         });
     </script>
 </body>
