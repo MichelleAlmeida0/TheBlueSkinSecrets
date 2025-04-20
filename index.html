@@ -60,6 +60,17 @@
         @keyframes progress {
             to { width: 100%; }
         }
+        /* Estilos do footer */
+        .footer {
+            text-align: center;
+            padding: 1rem;
+            background: #000;
+            color: #fff;
+            font-size: 1rem;
+            margin-top: 2rem;
+            border-top: 1px solid #00f7ff;
+            text-shadow: 0 0 5px #00f7ff;
+        }
     </style>
     <!-- Tailwind carregado assincronamente -->
     <script defer src="https://cdn.tailwindcss.com"></script>
@@ -197,12 +208,20 @@
                 <div class="progress-bar"></div>
             </div>
             <p class="text-gray-400 mt-4 animate-pulse">Redirecting in:</p>
+            <footer class="footer mt-8">
+                <p>@2025 Michelle Almeida. All copyright Reserved</p>
+            </footer>
         </div>
     </div>
 
+    <!-- Footer na página inicial -->
+    <footer class="footer">
+        <p>@2025 Michelle Almeida. All copyright Reserved</p>
+    </footer>
+
     <script>
         // Script Otimizado
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxwIzLXG8wo5rBJBZL3JKXazptzFF_hEgZsKzMop4q8tMeXq3-swLWBwrtt6cTxpVOq/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycby7nnWiHQ6GtHsm_xbzIdzJkWRbRV3gqU1aY-QABFlN6N6A3RY-pNGC8spypgyq5tdU/exec';
         let countdownActive = false;
 
         function startCountdown() {
@@ -242,7 +261,8 @@
                 
                 // Enviar dados ao Google Sheets
                 const formData = new FormData(form);
-                await fetch(scriptURL, { method: 'POST', body: formData });
+                const response = await fetch(scriptURL, { method: 'POST', body: formData });
+                if (!response.ok) throw new Error('Falha ao enviar dados para o Google Sheets');
                 
                 startCountdown();
                 
