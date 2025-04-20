@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Pré-carrega o Tailwind CSS para acelerar o carregamento -->
+    <!-- Pré-carrega CSS para otimizar o carregamento -->
     <link rel="preload" href="https://cdn.tailwindcss.com" as="style">
     <title>Blue Antioxidant Secret (2025) - Erase Wrinkles & Dark Spots in 21 Days | Dermatologist-Approved</title>
     <meta name="description" content="Top Dermatologists Reveal: This 2025 Blue Antioxidant Formula Erases 87% of Wrinkles, Banishes Dark Spots & Lifts Sagging Skin in Just 3 Weeks - No Creams or Injections Needed">
@@ -51,7 +51,7 @@
             width: 0;
             height: 100%;
             background: linear-gradient(to right, #00f7ff, #0066ff);
-            animation: progress 2s linear infinite;
+            animation: progress 6s linear forwards; /* Ajustado para 6s para sincronizar com o delay */
         }
         @keyframes progress {
             0% { width: 0; }
@@ -241,12 +241,16 @@
     </div>
 
     <script>
-        // Controla a tela de carregamento
+        // Controla a tela de carregamento com delay adicional
         window.onload = function() {
             const loader = document.getElementById('loader');
             const content = document.getElementById('content');
-            loader.style.display = 'none';
-            content.style.display = 'block';
+
+            // Após o carregamento completo, adiciona um delay de 6 segundos
+            setTimeout(() => {
+                loader.style.display = 'none'; // Esconde a tela de carregamento
+                content.style.display = 'block'; // Exibe o conteúdo principal
+            }, 6000); // 6000ms = 6s
         };
 
         // Script otimizado para formulários
