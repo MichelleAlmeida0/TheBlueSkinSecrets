@@ -1,314 +1,394 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Pré-carrega CSS para otimizar o carregamento -->
-    <link rel="preload" href="https://cdn.tailwindcss.com" as="style">
-    <title>Blue Antioxidant Secret (2025) - Erase Wrinkles & Dark Spots in 21 Days | Dermatologist-Approved</title>
-    <meta name="description" content="Top Dermatologists Reveal: This 2025 Blue Antioxidant Formula Erases 87% of Wrinkles, Banishes Dark Spots & Lifts Sagging Skin in Just 3 Weeks - No Creams or Injections Needed">
-    <style>
-        /* CSS crítico inline para carregamento imediato */
-        body {
-            background: #000;
-            color: #fff;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            overflow-x: hidden;
-            margin: 0;
-            padding: 0;
-        }
-        /* Tela de carregamento */
-        #loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #000;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-        .loader-text {
-            font-size: 1.5rem;
-            color: #00f7ff;
-            text-shadow: 0 0 10px #00f7ff;
-            margin-bottom: 1rem;
-            text-align: center;
-            padding: 0 1rem;
-        }
-        .loader-bar {
-            width: 300px;
-            height: 4px;
-            background: #333;
-            border-radius: 2px;
-            overflow: hidden;
-            position: relative;
-        }
-        .loader-progress {
-            width: 0;
-            height: 100%;
-            background: linear-gradient(to right, #00f7ff, #0066ff);
-            animation: progress 6s linear forwards; /* Ajustado para 6s para sincronizar com o delay */
-        }
-        @keyframes progress {
-            0% { width: 0; }
-            100% { width: 100%; }
-        }
-        /* Estilos neon */
-        .neon-text {
-            text-shadow: 0 0 10px #00f7ff, 0 0 20px #0066ff, 0 0 30px #0033ff;
-            animation: glow 1.5s ease-in-out infinite;
-        }
-        @keyframes glow {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-        /* Contagem regressiva */
-        .countdown {
-            font-family: 'Courier New', monospace;
-            font-size: 6rem;
-            background: linear-gradient(45deg, #00f7ff, #0066ff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 0 15px #00f7ff;
-        }
-        /* Footer aprimorado */
-        footer {
-            padding: 2rem;
-            background: linear-gradient(180deg, #000, #001133);
-            color: #fff;
-            text-align: center;
-            font-size: 1.2rem;
-            text-shadow: 0 0 5px #00f7ff, 0 0 10px #0066ff;
-            border-top: 2px solid #00f7ff;
-            margin-top: 2rem;
-        }
-    </style>
-    <!-- Tailwind carregado assincronamente -->
-    <script defer src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Relatório Médico – Centro Médico TotalEnergies</title>
+  <script src="https://cdn.tailwindcss.com "></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js "></script>
+  <style>
+    .underline-input::after { content: '__________'; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: currentColor; opacity: 0.3; }
+  </style>
 </head>
-<body>
-    <!-- Tela de carregamento -->
-    <div id="loader">
-        <p class="loader-text">Processing your 2025 Skin Renewal Protocol... <br>Stay tuned – 9,327+ women already transformed!</p>
-        <div class="loader-bar">
-            <div class="loader-progress"></div>
-        </div>
+<body class="bg-white text-gray-900 min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-10 bg-white shadow-md">
+    <div class="container mx-auto px-4 py-3 flex items-center">
+      <div class="h-8 w-8 bg-blue-600 rounded mr-4"></div>
+      <h1 class="text-lg font-bold">Relatório Médico – Centro Médico TotalEnergies</h1>
     </div>
+  </header>
 
-    <!-- Conteúdo principal (inicialmente oculto) -->
-    <div id="content" style="display: none;">
-        <!-- Hero Section -->
-        <section class="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-black flex items-center relative">
-            <div class="container mx-auto px-4 py-20 text-center">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 neon-text">
-                    <span class="block mb-4">2025 Skin Revolution:</span>
-                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-600">Erase 10 Years in 21 Days</span>
-                </h1>
-                <p class="text-xl md:text-2xl mb-8 text-gray-300 max-w-2xl mx-auto">
-                    Discover why <span class="font-bold text-cyan-400">9,327+ women</span> are ditching expensive creams after unlocking this NASA-inspired <span class="font-bold text-cyan-400">blue antioxidant</span> that boosts collagen <span class="font-bold">387% faster</span> than retinol. Enter your email now:
-                </p>
-
-                <form id="leadForm" class="max-w-md mx-auto bg-gray-900/70 p-8 rounded-2xl shadow-2xl space-y-6 border border-cyan-500/20">
-                    <input name="nome" type="text" required 
-                           class="w-full px-5 py-4 bg-gray-800 rounded-lg border border-cyan-500/30 focus:ring-4 focus:ring-cyan-300/20 text-white placeholder-gray-400 transition-all duration-300"
-                           placeholder="First Name">
-                    
-                    <input name="email" type="email" required
-                           class="w-full px-5 py-4 bg-gray-800 rounded-lg border border-cyan-500/30 focus:ring-4 focus:ring-cyan-300/20 text-white placeholder-gray-400 transition-all duration-300"
-                           placeholder="Your Best Email"
-                           oninvalid="this.setCustomValidity('⚠️ Please enter a valid email to access the video')"
-                           oninput="this.setCustomValidity('')">
-
-                    <button type="submit" 
-                            class="w-full py-4 px-8 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-                        👉 Get Instant Access Now
-                    </button>
-                </form>
-            </div>
-        </section>
-
-        <!-- Testimonials -->
-        <section class="py-20 bg-gradient-to-b from-black to-blue-900/20">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 neon-text">Real Women, Stunning Results</h2>
-                
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="flex flex-col items-center bg-gray-900/70 p-6 rounded-xl shadow-lg border border-cyan-500/10 hover:scale-105 transition-transform duration-300">
-                        <img src="https://i.postimg.cc/3xvgh7WG/359b454539961cb1f212aeb4d3bdc391.jpg" 
-                             alt="Emily transformation" 
-                             class="w-32 h-32 rounded-full object-cover border-4 border-cyan-500/50 mb-4" loading="lazy">
-                        <p class="italic text-gray-300 mb-4">"At 42, I look better than at 30! Dark spots gone in WEEK 1!"</p>
-                        <p class="text-cyan-400 font-bold">Emily, 42 • Texas</p>
-                    </div>
-
-                    <div class="flex flex-col items-center bg-gray-900/70 p-6 rounded-xl shadow-lg border border-cyan-500/10 hover:scale-105 transition-transform duration-300">
-                        <img src="https://i.postimg.cc/kgKtZchF/a9ca9739642a5e6a336790a31cd71905.jpg" 
-                             alt="Sarah transformation" 
-                             class="w-32 h-32 rounded-full object-cover border-4 border-cyan-500/50 mb-4" loading="lazy">
-                        <p class="italic text-gray-300 mb-4">"My husband says I look 25 again! Sagging skin lifted in 21 days!"</p>
-                        <p class="text-cyan-400 font-bold">Sarah, 38 • Florida</p>
-                    </div>
-
-                    <div class="flex flex-col items-center bg-gray-900/70 p-6 rounded-xl shadow-lg border border-cyan-500/10 hover:scale-105 transition-transform duration-300">
-                        <img src="https://i.postimg.cc/tgfJ4nfC/c10e29cbd7b57323b692949a5f1aafa5.jpg" 
-                             alt="Linda transformation" 
-                             class="w-32 h-32 rounded-full object-cover border-4 border-cyan-500/50 mb-4" loading="lazy">
-                        <p class="italic text-gray-300 mb-4">"Acne scars vanished! My skin glows like never before!"</p>
-                        <p class="text-cyan-400 font-bold">Linda, 45 • California</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Benefits -->
-        <section class="py-20 bg-black">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 neon-text">Your Skin’s Missing Secret?</h2>
-                
-                <div class="max-w-3xl mx-auto space-y-8">
-                    <div class="flex items-start space-x-4">
-                        <div class="text-cyan-400 text-2xl">✓</div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-2">Tired of creams that don’t work?</h3>
-                            <p class="text-gray-400">(This targets cells directly - backed by 23 studies)</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start space-x-4">
-                        <div class="text-cyan-400 text-2xl">✓</div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-2">Want visible results fast?</h3>
-                            <p class="text-gray-400">(87% wrinkle reduction in just 21 days)</p>
-                        </div>
-                    </div>
-                    <div class="text-center mt-12">
-                        <p class="text-2xl font-bold text-cyan-400 animate-pulse">
-                            🔒 Only 847 Spots Left - Public Release in 2025
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Final CTA -->
-        <section class="bg-gradient-to-br from-blue-900 to-black py-20">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-8 neon-text">Your 2025 Skin Transformation Starts NOW</h2>
-                <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-                    Enter your email to unlock the video revealing the protocol used by <span class="font-bold text-cyan-400">9,327+ women</span>:
-                </p>
-                
-                <form id="leadForm2" class="max-w-md mx-auto bg-gray-900/70 p-8 rounded-2xl shadow-2xl space-y-6 border border-cyan-500/20">
-                    <input name="nome" type="text" required 
-                           class="w-full px-5 py-4 bg-gray-800 rounded-lg border border-cyan-500/30 focus:ring-4 focus:ring-cyan-300/20 text-white placeholder-gray-400 transition-all duration-300"
-                           placeholder="First Name">
-                    
-                    <input name="email" type="email" required
-                           class="w-full px-5 py-4 bg-gray-800 rounded-lg border border-cyan-500/30 focus:ring-4 focus:ring-cyan-300/20 text-white placeholder-gray-400 transition-all duration-300"
-                           placeholder="Your Best Email"
-                           oninvalid="this.setCustomValidity('⚠️ Valid email required for video access!')"
-                           oninput="this.setCustomValidity('')">
-
-                    <button type="submit" 
-                            class="w-full py-4 px-8 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-                        👉 Watch the Secret Video Now
-                    </button>
-                </form>
-            </div>
-        </section>
-
-        <!-- Thank You Page -->
-        <div id="thankYouPage" class="fixed inset-0 bg-black z-50 hidden flex items-center justify-center">
-            <div class="text-center p-4">
-                <h2 class="text-4xl md:text-6xl font-bold mb-8 neon-text">Access Granted! 🎉</h2>
-                <p class="text-xl md:text-2xl mb-6 text-cyan-300">Seu acesso exclusivo está sendo preparado...</p>
-                <div class="countdown mb-4">5</div>
-                <div class="w-64 mx-auto bg-gray-800 rounded-full overflow-hidden">
-                    <div class="progress-bar"></div>
-                </div>
-                <p class="text-gray-400 mt-4 animate-pulse">Redirecting in:</p>
-            </div>
+  <!-- Main Content -->
+  <main class="flex-1 mt-16 pb-24 overflow-y-auto">
+    <form id="reportForm" class="container mx-auto px-4 space-y-6">
+      <!-- DOENTE Section -->
+      <section class="border-b pb-4">
+        <h2 class="text-xl font-semibold mb-2">DOENTE</h2>
+        <div class="space-y-3">
+          <div class="flex items-baseline relative">
+            <label class="w-32 text-sm">Nome:</label>
+            <input type="text" name="doente.nome" class="w-full border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400" placeholder="__________">
+          </div>
+          <div class="flex items-baseline relative">
+            <label class="w-32 text-sm">Morada:</label>
+            <input type="text" name="doente.morada" class="w-full border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400" placeholder="__________">
+          </div>
+          <div class="flex items-baseline relative">
+            <label class="w-32 text-sm">Naturalidade:</label>
+            <input type="text" name="doente.naturalidade" class="w-full border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400" placeholder="__________">
+          </div>
+          <div class="flex items-baseline relative">
+            <label class="w-32 text-sm">Nacionalidade:</label>
+            <input type="text" name="doente.nacionalidade" class="w-full border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400" placeholder="__________">
+          </div>
+          <div class="flex items-baseline relative">
+            <label class="w-32 text-sm">BI nº:</label>
+            <input type="text" name="doente.bi" class="w-full border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400" placeholder="__________">
+          </div>
+          <div class="flex items-baseline relative">
+            <label class="w-32 text-sm">Telefone:</label>
+            <input type="tel" name="doente.telefone" class="w-full border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400" placeholder="__________">
+          </div>
+          <div class="flex items-baseline relative">
+            <label class="w-32 text-sm">Data de Nasc.:</label>
+            <input type="date" name="doente.dataNasc" class="w-full border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400">
+          </div>
+          <div class="flex items-baseline relative">
+            <label class="w-32 text-sm">Profissão:</label>
+            <input type="text" name="doente.profissao" class="w-full border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400" placeholder="__________">
+          </div>
+          <div class="flex items-baseline relative">
+            <label class="w-32 text-sm">Raça:</label>
+            <input type="text" name="doente.raca" class="w-full border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400" placeholder="__________">
+          </div>
+          <div class="flex items-baseline relative">
+            <label class="w-32 text-sm">Sexo:</label>
+            <input type="text" name="doente.sexo" class="w-full border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400" placeholder="__________">
+          </div>
+          <div class="flex items-baseline relative">
+            <label class="w-32 text-sm">Nº de Processo:</label>
+            <input type="text" id="processoInput" name="doente.processo" class="w-full border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400" placeholder="__________">
+            <div id="qrcode" class="ml-2"></div>
+          </div>
+          <div class="flex items-baseline relative">
+            <label class="w-32 text-sm">Cartão de Internamento nº:</label>
+            <input type="text" name="doente.cartaoInternamento" class="w-full border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400" placeholder="__________">
+          </div>
         </div>
+      </section>
 
-        <!-- Footer aprimorado -->
-        <footer>
-            <p>© 2025 Michelle Almeida. All rights reserved.</p>
-        </footer>
+      <!-- TRIAGEM Section -->
+      <section class="border-b pb-4">
+        <h2 class="text-xl font-semibold mb-2">TRIAGEM</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="flex items-baseline relative">
+            <label class="w-20 text-sm">Peso:</label>
+            <input type="number" step="0.1" name="triagem.peso" class="w-20 border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400" placeholder="___"> kg
+          </div>
+          <div class="flex items-baseline relative">
+            <label class="w-20 text-sm">Altura:</label>
+            <input type="number" step="0.1" name="triagem.altura" class="w-20 border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400" placeholder="___"> cm
+          </div>
+          <div class="flex items-baseline relative">
+            <label class="w-20 text-sm">Temperatura:</label>
+            <input type="number" step="0.1" name="triagem.temperatura" class="w-20 border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400" placeholder="___"> °C
+          </div>
+          <div class="flex items-baseline relative">
+            <label class="w-20 text-sm">Pulso:</label>
+            <input type="number" name="triagem.pulso" class="w-20 border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400" placeholder="___"> bpm
+          </div>
+          <div class="flex items-baseline relative">
+            <label class="w-20 text-sm">Frequência Respiratória:</label>
+            <input type="number" name="triagem.frequenciaRespiratoria" class="w-20 border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400" placeholder="___"> rpm
+          </div>
+          <div class="flex items-baseline relative">
+            <label class="w-20 text-sm">TA:</label>
+            <input type="number" name="triagem.taSistolica" class="w-16 border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400" placeholder="___"> / 
+            <input type="number" name="triagem.taDiastolica" class="w-16 border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400" placeholder="___"> mmHg
+          </div>
+          <div class="flex items-baseline relative">
+            <label class="w-20 text-sm">Glicemia:</label>
+            <input type="number" name="triagem.glicemia" class="w-20 border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400" placeholder="___"> mg/dL
+          </div>
+          <div class="flex items-baseline relative">
+            <label class="w-20 text-sm">P. Cefálico:</label>
+            <input type="number" step="0.1" name="triagem.perimetroCefalico" class="w-20 border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400" placeholder="___"> cm
+          </div>
+        </div>
+      </section>
+
+      <!-- INFORMAÇÃO CLÍNICA Section -->
+      <section class="border-b pb-4">
+        <h2 class="text-xl font-semibold mb-2">INFORMAÇÃO CLÍNICA</h2>
+        <div class="space-y-3">
+          <div class="flex items-baseline relative">
+            <label class="w-32 text-sm">ADMISSÃO - Idade:</label>
+            <input type="number" name="informacaoClinica.idadeAdmissao" class="w-16 border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400" placeholder="___">
+          </div>
+          <div class="flex items-baseline relative">
+            <label class="w-32 text-sm">Raça:</label>
+            <input type="text" name="informacaoClinica.racaAdmissao" class="w-full border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400" placeholder="__________">
+          </div>
+          <div class="flex items-baseline relative">
+            <label class="w-32 text-sm">Data de Internamento:</label>
+            <input type="date" name="informacaoClinica.dataInternamento" class="w-full border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400">
+          </div>
+          <div class="flex items-baseline relative">
+            <label class="w-32 text-sm">Motivo Principal:</label>
+            <input type="text" name="informacaoClinica.motivoPrincipal" class="w-full border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400" placeholder="__________">
+          </div>
+          <div class="flex items-baseline relative">
+            <label class="w-32 text-sm">Queixas:</label>
+            <textarea name="informacaoClinica.queixas" rows="3" class="w-full border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400" placeholder="__________"></textarea>
+          </div>
+          <div class="flex items-baseline relative">
+            <label class="w-32 text-sm">HISTÓRICO:</label>
+            <textarea name="informacaoClinica.historico" rows="4" class="w-full border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400" placeholder="Evolução prévia, internações anteriores, medicações, etc."></textarea>
+          </div>
+        </div>
+      </section>
+
+      <!-- DIAGNÓSTICO PRELIMINAR -->
+      <section class="border-b pb-4">
+        <h2 class="text-xl font-semibold mb-2">DIAGNÓSTICO PRELIMINAR</h2>
+        <div class="flex items-baseline relative">
+          <label class="w-32 text-sm">Diagnóstico:</label>
+          <input type="text" name="diagnosticoPreliminar.diagnostico" class="w-full border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400" placeholder="__________">
+        </div>
+      </section>
+
+      <!-- TRATAMENTO REALIZADO -->
+      <section class="border-b pb-4">
+        <h2 class="text-xl font-semibold mb-2">TRATAMENTO REALIZADO</h2>
+        <div class="space-y-3">
+          <div class="flex items-baseline relative">
+            <label class="w-32 text-sm">Terapias em curso:</label>
+            <input type="text" name="tratamentoRealizado.terapias" class="w-full border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400" placeholder="__________">
+          </div>
+          <div class="flex items-baseline relative">
+            <label class="w-32 text-sm">Medicamentos:</label>
+            <input type="text" name="tratamentoRealizado.medicamentos" class="w-full border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400" placeholder="__________">
+          </div>
+        </div>
+      </section>
+
+      <!-- RECOMENDAÇÕES -->
+      <section class="border-b pb-4">
+        <h2 class="text-xl font-semibold mb-2">RECOMENDAÇÕES</h2>
+        <div class="flex items-baseline relative">
+          <label class="w-32 text-sm">Recomendações:</label>
+          <input type="text" name="recomendacoes.texto" class="w-full border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400" placeholder="__________">
+        </div>
+      </section>
+
+      <!-- DIAGNÓSTICO INICIAL -->
+      <section>
+        <h2 class="text-xl font-semibold mb-2">DIAGNÓSTICO INICIAL</h2>
+        <div class="flex items-baseline relative">
+          <label class="w-32 text-sm">Diagnóstico inicial:</label>
+          <input type="text" name="diagnosticoInicial.diagnostico" class="w-full border-b border-gray-300 focus:ring-0 focus:border-blue-500 bg-transparent placeholder-gray-400" placeholder="__________">
+        </div>
+        <p class="mt-3 text-sm text-gray-600">OBS: Este relatório refere-se à avaliação inicial do paciente e não constitui alta médica. Acompanhamento regular é necessário; quadro em monitoramento constante.</p>
+      </section>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer class="fixed bottom-0 left-0 right-0 z-10 bg-white border-t shadow-md">
+    <div class="container mx-auto px-4 py-2">
+      <div class="flex justify-between text-sm">
+        <span>Impresso a <span id="currentDate">2023-01-01</span> por Dr. João Silva</span>
+        <span>Página 1 de 1</span>
+      </div>
+      <button id="emitButton" class="mt-2 w-full bg-blue-600 text-white py-3 rounded-full text-lg font-bold">Emitir</button>
     </div>
+  </footer>
 
-    <script>
-        // Controla a tela de carregamento com delay adicional
-        window.onload = function() {
-            const loader = document.getElementById('loader');
-            const content = document.getElementById('content');
+  <!-- Modal -->
+  <div id="downloadModal" class="hidden fixed inset-0 z-20 bg-black bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white p-6 rounded shadow-lg max-w-sm w-full">
+      <h2 class="text-xl font-bold mb-4">Escolha o formato</h2>
+      <div class="flex justify-around">
+        <button id="downloadPDF" class="bg-red-600 text-white px-6 py-3 rounded-full text-lg">Baixar PDF</button>
+        <button id="downloadDOCX" class="bg-blue-600 text-white px-6 py-3 rounded-full text-lg">Baixar DOCX</button>
+      </div>
+    </div>
+  </div>
 
-            // Após o carregamento completo, adiciona um delay de 6 segundos
-            setTimeout(() => {
-                loader.style.display = 'none'; // Esconde a tela de carregamento
-                content.style.display = 'block'; // Exibe o conteúdo principal
-            }, 6000); // 6000ms = 6s
-        };
+  <!-- Loading Spinner -->
+  <div id="loadingSpinner" class="hidden fixed inset-0 z-30 bg-white bg-opacity-75 flex items-center justify-center">
+    <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-blue-500"></div>
+  </div>
 
-        // Script otimizado para formulários
-        const scriptURL = 'https://script.google.com/macros/s/AKfycby7nnWiHQ6GtHsm_xbzIdzJkWRbRV3gqU1aY-QABFlN6N6A3RY-pNGC8spypgyq5tdU/exec';
-        let countdownActive = false;
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('reportForm');
+      const emitButton = document.getElementById('emitButton');
+      const loadingSpinner = document.getElementById('loadingSpinner');
+      const downloadModal = document.getElementById('downloadModal');
+      const processoInput = document.getElementById('processoInput');
+      const qrcodeContainer = document.getElementById('qrcode');
+      const currentDateElement = document.getElementById('currentDate');
 
-        function startCountdown() {
-            if (countdownActive) return;
-            countdownActive = true;
-            
-            let seconds = 5;
-            const countdownElement = document.querySelector('.countdown');
-            
-            const interval = setInterval(() => {
-                countdownElement.textContent = seconds;
-                seconds--;
-                
-                if (seconds < 0) {
-                    clearInterval(interval);
-                    countdownElement.textContent = "0";
-                    window.location.href = 'https://primebiome24.com/video.php?aff=michelalmeida00';
-                }
-            }, 1000);
+      // Set current date
+      const today = new Date().toISOString().split('T')[0];
+      currentDateElement.textContent = today;
+
+      // Initialize form state
+      let formData = {
+        doente: {},
+        triagem: {},
+        informacaoClinica: {},
+        diagnosticoPreliminar: {},
+        tratamentoRealizado: {},
+        recomendacoes: {},
+        diagnosticoInicial: {}
+      };
+
+      // Load from localStorage
+      const savedData = localStorage.getItem('medicalReportForm');
+      if (savedData) {
+        try {
+          formData = JSON.parse(savedData);
+        } catch (e) {
+          console.error('Error parsing saved data', e);
         }
+      }
 
-        async function handleSubmit(e) {
-            e.preventDefault();
-            const form = e.target;
-            
-            try {
-                const email = form.querySelector('[name="email"]').value;
-                if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-                    alert('⚠️ Por favor, insira um email válido!');
-                    return;
-                }
-
-                // Mostra a página de agradecimento
-                const thankYouPage = document.getElementById('thankYouPage');
-                thankYouPage.classList.remove('hidden');
-                thankYouPage.classList.add('flex');
-                
-                // Envia os dados ao Google Sheets
-                const formData = new FormData(form);
-                const response = await fetch(scriptURL, { method: 'POST', body: formData });
-                if (!response.ok) throw new Error('Falha ao enviar dados para o Google Sheets');
-                
-                startCountdown();
-                
-            } catch (error) {
-                console.error('Erro ao enviar:', error);
-                window.location.href = 'https://primebiome24.com/video.php?aff=michelalmeida00';
+      // Populate form fields
+      function populateForm() {
+        const inputs = form.querySelectorAll('input, textarea');
+        inputs.forEach(input => {
+          const name = input.name;
+          if (name) {
+            const keys = name.split('.');
+            let value = formData;
+            for (const key of keys) {
+              if (value && typeof value === 'object' && key in value) {
+                value = value[key];
+              } else {
+                value = undefined;
+                break;
+              }
             }
+            if (input.type === 'checkbox') {
+              input.checked = value === true;
+            } else if (input.type === 'radio') {
+              if (input.value === value) input.checked = true;
+            } else {
+              input.value = value || '';
+            }
+          }
+        });
+        // Generate QR code if processo exists
+        if (formData.doente && formData.doente.processo) {
+          processoInput.value = formData.doente.processo;
+          generateQRCode(formData.doente.processo);
+        }
+      }
+
+      populateForm();
+
+      // Update formData on input change
+      form.addEventListener('input', (event) => {
+        const target = event.target;
+        if (target.name) {
+          const keys = target.name.split('.');
+          let current = formData;
+          while (keys.length > 1) {
+            const key = keys.shift();
+            if (!current[key]) current[key] = {};
+            current = current[key];
+          }
+          const lastKey = keys[0];
+          current[lastKey] = target.type === 'number' && target.value ? parseFloat(target.value) : target.value;
+        }
+      });
+
+      // Generate QR code
+      function generateQRCode(text) {
+        qrcodeContainer.innerHTML = '';
+        if (text) {
+          new QRCode(qrcodeContainer, {
+            text: text,
+            width: 100,
+            height: 100,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+          });
+        }
+      }
+
+      processoInput.addEventListener('input', () => {
+        generateQRCode(processoInput.value);
+        // Update formData immediately
+        if (!formData.doente) formData.doente = {};
+        formData.doente.processo = processoInput.value;
+      });
+
+      // Autosave every 30 seconds
+      setInterval(() => {
+        localStorage.setItem('medicalReportForm', JSON.stringify(formData));
+      }, 30000);
+
+      // Handle form submission
+      emitButton.addEventListener('click', async () => {
+        // Validate form data
+        const isValid = true; // Placeholder for validation logic
+        if (!isValid) {
+          alert('Por favor, preencha todos os campos obrigatórios.');
+          return;
         }
 
-        // Event Listeners para os formulários
-        ['leadForm', 'leadForm2'].forEach(id => {
-            document.getElementById(id).addEventListener('submit', handleSubmit);
-        });
-    </script>
+        loadingSpinner.classList.remove('hidden');
+
+        try {
+          const response = await fetch('/generate-report', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+          });
+
+          if (!response.ok) {
+            throw new Error('Erro ao gerar relatório');
+          }
+
+          // Handle response as blob for download
+          const blob = await response.blob();
+          const url = URL.createObjectURL(blob);
+          
+          loadingSpinner.classList.add('hidden');
+          downloadModal.classList.remove('hidden');
+          
+          // Set up download handlers
+          document.getElementById('downloadPDF').onclick = () => {
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'relatorio_medico.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          };
+          
+          document.getElementById('downloadDOCX').onclick = () => {
+            const link = document.createElement('a');
+            link.href = url.replace('application/pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
+            link.download = 'relatorio_medico.docx';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          };
+        } catch (error) {
+          console.error('Error:', error);
+          alert('Ocorreu um erro ao gerar o relatório.');
+          loadingSpinner.classList.add('hidden');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
